@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Reminder</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Birthday Reminder Application</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/add">Add Customer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>All Customers</h2>
+
+      <a href="/add" class="btn">Add New Customer</a>
+
+      <% if(customers.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% customers.forEach(customer => { %>
+          <tr>
+            <td><%= customer.username %></td>
+            <td><%= customer.email %></td>
+            <td>
+              <% if (customer.gender) { %> <%=
+              customer.gender.charAt(0).toUpperCase() + customer.gender.slice(1)
+              %> <% } else { %> Not specified <% } %>
+            </td>
+            <td><%= customer.dateOfBirth.toISOString().split('T')[0] %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <p>No customers found</p>
+      <% } %>
+    </div>
+
+    <script src="/js/main.js"></script>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

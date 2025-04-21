@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success - Birthday Reminder Application</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Birthday Reminder Application</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/add">Add Customer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="success"><%= message %></div>
+
+      <a href="/" class="btn">Back to Home</a>
+      <a href="/add" class="btn">Add Another Customer</a>
+    </div>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

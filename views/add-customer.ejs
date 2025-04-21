@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Customer - Birthday Reminder</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Birthday Reminder Application</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/add">Add Customer</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h2>Add New Customer</h2>
+    
+    <% if(typeof error !== 'undefined') { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    
+    <form action="/add" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required value="<%= typeof username !== 'undefined' ? username : '' %>">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required value="<%= typeof email !== 'undefined' ? email : '' %>">
+      </div>
+
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Select gender</option>
+          <option value="male" <%= typeof gender !== 'undefined' && gender === 'male' ? 'selected' : '' %>>Male</option>
+          <option value="female" <%= typeof gender !== 'undefined' && gender === 'female' ? 'selected' : '' %>>Female</option>
+          <option value="other" <%= typeof gender !== 'undefined' && gender === 'other' ? 'selected' : '' %>>Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required value="<%= typeof dateOfBirth !== 'undefined' ? dateOfBirth : '' %>">
+      </div>
+      
+      <button type="submit" class="btn">Add Customer</button>
+    </form>
+  </div>
+  
+  <script src="/js/main.js"></script>
+
+  <%- include('./partials/footer') %>
+
+
+</body>
+</html>

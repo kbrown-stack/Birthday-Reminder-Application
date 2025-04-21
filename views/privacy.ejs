@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy - Birthday Reminder</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Birthday Reminder Application</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/add">Add Customer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Privacy Policy</h2>
+
+      <div class="policy-content">
+        <p>Last updated: <%= new Date().toLocaleDateString() %></p>
+
+        <h3>1. Information We Collect</h3>
+        <p>
+          Our Birthday Reminder Application collects and stores the following
+          information about your customers:
+        </p>
+        <ul>
+          <li>Username</li>
+          <li>Email address</li>
+          <li>Gender</li>
+          <li>Date of birth</li>
+        </ul>
+
+        <h3>2. How We Use The Information</h3>
+        <p>
+          The information we collect is used solely for the purpose of sending
+          birthday greetings to your customers on their birthday. We do not use
+          this data for any other purposes or share it with third parties.
+        </p>
+
+        <h3>3. Data Security</h3>
+        <p>
+          We implement reasonable security measures to protect the personal
+          information we collect and maintain. However, no security system is
+          impenetrable, and we cannot guarantee the security of our systems
+          100%.
+        </p>
+
+        <h3>4. Email Communications</h3>
+        <p>
+          By providing customer email addresses, you confirm that you have the
+          necessary permission to send them birthday greetings. The application
+          will automatically send emails to customers on their birthdays.
+        </p>
+
+        <h3>5. Changes To This Policy</h3>
+        <p>
+          We may update this privacy policy from time to time. We will notify
+          you of any changes by posting the new privacy policy on this page.
+        </p>
+
+        <h3>6. Contact Us</h3>
+        <p>
+          If you have any questions about this Privacy Policy, please contact us
+          at:
+        </p>
+        <p>Email: browndevop@gmail.com</p>
+      </div>
+
+      <a href="/" class="btn">Back to Home</a>
+    </div>
+
+    <!-- footer -->
+
+    <footer>
+      <p>&copy; <%= new Date().getFullYear() %> Birthday Reminder App</p>
+      <p>Keeping connections with your customers</p>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/add">Add Customer</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+  </body>
+</html>
